@@ -1,4 +1,4 @@
-import { EdgeType } from '../types';
+import { EdgeType } from "../types";
 
 interface LineTypeItemProps {
   type: EdgeType;
@@ -7,16 +7,21 @@ interface LineTypeItemProps {
   onClick: () => void;
 }
 
-export function LineTypeItem({ type, label, selected, onClick }: LineTypeItemProps) {
+export function LineTypeItem({
+  type,
+  label,
+  selected,
+  onClick
+}: LineTypeItemProps) {
   const getPreviewClass = () => {
-    if (type === 'dashed') return 'line-preview dashed';
-    if (type === 'animated') return 'line-preview animated';
-    return 'line-preview';
+    if (type === "dashed") return "line-preview dashed";
+    if (type === "animated") return "line-preview animated";
+    return "line-preview";
   };
 
   return (
-    <div 
-      className={`line-type-item ${selected ? 'selected' : ''}`}
+    <div
+      className={`line-type-item ${selected ? "selected" : ""}`}
       onClick={onClick}
     >
       <div className={getPreviewClass()} />

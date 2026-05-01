@@ -4,14 +4,16 @@ const tsParser = require("@typescript-eslint/parser");
 const react = require("eslint-plugin-react");
 const reactHooks = require("eslint-plugin-react-hooks");
 const reactRefresh = require("eslint-plugin-react-refresh");
+const globals = require("globals");
+const prettier = require("eslint-config-prettier");
 
 module.exports = [
-  // Ignore stuff
+  // Ignore folders
   {
     ignores: ["node_modules", "dist", "build"]
   },
 
-  // Base JS recommended
+  // Base JS rules
   js.configs.recommended,
 
   {
@@ -23,6 +25,9 @@ module.exports = [
         ecmaVersion: 2022,
         sourceType: "module",
         ecmaFeatures: { jsx: true }
+      },
+      globals: {
+        ...globals.browser
       }
     },
 
@@ -40,13 +45,17 @@ module.exports = [
     },
 
     rules: {
+      // Recommended rules
       ...tsPlugin.configs.recommended.rules,
       ...react.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
 
-      // sensible defaults
+      // React 17+
       "react/react-in-jsx-scope": "off",
+
+      // Optional relaxations
       "react/prop-types": "off"
     }
-  }
+  },
+  prettier
 ];

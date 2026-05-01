@@ -1,4 +1,4 @@
-import { NodeConfigWithIcon } from '../nodeConfigs';
+import { NodeConfigWithIcon } from "../nodeConfigs";
 
 interface ToolItemProps {
   config: NodeConfigWithIcon;
@@ -12,9 +12,7 @@ export function ToolItem({ config, onDragStart }: ToolItemProps) {
       draggable
       onDragStart={(e) => onDragStart(e, config.type)}
     >
-      <div className="tool-icon">
-        {config.icon}
-      </div>
+      <div className="tool-icon">{config.icon}</div>
       <span className="tool-label">{config.label}</span>
     </div>
   );

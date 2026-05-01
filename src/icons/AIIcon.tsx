@@ -1,6 +1,12 @@
 export function AIIcon() {
   return (
-    <svg width="40" height="48" viewBox="0 0 40 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width="40"
+      height="48"
+      viewBox="0 0 40 48"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <rect x="6" y="12" width="28" height="24" rx="4" fill="#06b6d4" />
       <rect x="10" y="18" width="8" height="8" rx="2" fill="#fff" />
       <rect x="22" y="18" width="8" height="8" rx="2" fill="#fff" />

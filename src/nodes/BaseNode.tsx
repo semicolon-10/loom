@@ -1,12 +1,22 @@
-import { Handle, Position, NodeProps, useReactFlow, NodeResizer } from '@xyflow/react';
-import { ReactNode, useState, useCallback, useRef, useEffect } from 'react';
+import {
+  Handle,
+  Position,
+  NodeProps,
+  useReactFlow,
+  NodeResizer
+} from "@xyflow/react";
+import { ReactNode, useState, useCallback, useRef, useEffect } from "react";
 
 interface BaseNodeData {
   label: string;
   icon: ReactNode;
 }
 
-export function BaseNode({ id, data, selected }: NodeProps & { data: BaseNodeData }) {
+export function BaseNode({
+  id,
+  data,
+  selected
+}: NodeProps & { data: BaseNodeData }) {
   const [isEditing, setIsEditing] = useState(false);
   const [labelText, setLabelText] = useState(data.label);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -27,17 +37,19 @@ export function BaseNode({ id, data, selected }: NodeProps & { data: BaseNodeDat
     setIsEditing(false);
     setNodes((nodes) =>
       nodes.map((node) =>
-        node.id === id ? { ...node, data: { ...node.data, label: labelText } } : node
+        node.id === id
+          ? { ...node, data: { ...node.data, label: labelText } }
+          : node
       )
     );
   }, [id, labelText, setNodes]);
 
   const handleKeyDown = useCallback(
     (e: React.KeyboardEvent) => {
-      if (e.key === 'Enter') {
+      if (e.key === "Enter") {
         handleBlur();
       }
-      if (e.key === 'Escape') {
+      if (e.key === "Escape") {
         setLabelText(data.label);
         setIsEditing(false);
       }
@@ -51,8 +63,8 @@ export function BaseNode({ id, data, selected }: NodeProps & { data: BaseNodeDat
         isVisible={selected}
         minWidth={80}
         minHeight={80}
-        lineStyle={{ stroke: '#333', strokeWidth: 1 }}
-        handleStyle={{ fill: '#333', width: 8, height: 8, borderRadius: 2 }}
+        lineStyle={{ stroke: "#333", strokeWidth: 1 }}
+        handleStyle={{ fill: "#333", width: 8, height: 8, borderRadius: 2 }}
       />
       <Handle type="target" position={Position.Top} />
       <div className="custom-node-icon">{data.icon}</div>

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState, useRef } from 'react';
+import { useCallback, useEffect, useState, useRef } from "react";
 import {
   ReactFlow,
   Background,
@@ -12,13 +12,13 @@ import {
   OnConnect,
   OnSelectionChangeFunc,
   useReactFlow,
-  MarkerType,
-} from '@xyflow/react';
-import '@xyflow/react/dist/style.css';
-import { nodeTypes } from '../nodes';
-import { edgeTypes } from '../edges';
-import { EdgeType, ArrowType } from '../types';
-import { saveDiagram, loadDiagram } from '../utils/storage';
+  MarkerType
+} from "@xyflow/react";
+import "@xyflow/react/dist/style.css";
+import { nodeTypes } from "../nodes";
+import { edgeTypes } from "../edges";
+import { EdgeType, ArrowType } from "../types";
+import { saveDiagram, loadDiagram } from "../utils/storage";
 
 interface FlowCanvasProps {
   selectedEdgeType: EdgeType;
@@ -27,20 +27,31 @@ interface FlowCanvasProps {
 }
 
 const getMarkers = (arrowType: ArrowType, isDark: boolean) => {
-  const marker = { type: MarkerType.ArrowClosed, color: isDark ? '#fff' : '#333' };
-  if (arrowType === 'head') {
+  const marker = {
+    type: MarkerType.ArrowClosed,
+    color: isDark ? "#fff" : "#333"
+  };
+  if (arrowType === "head") {
     return { markerStart: undefined, markerEnd: marker };
   }
-  if (arrowType === 'both') {
+  if (arrowType === "both") {
     return { markerStart: marker, markerEnd: marker };
   }
   return { markerStart: undefined, markerEnd: undefined };
 };
 
-export function FlowCanvas({ selectedEdgeType, selectedArrowType, darkMode }: FlowCanvasProps) {
+export function FlowCanvas({
+  selectedEdgeType,
+  selectedArrowType,
+  darkMode
+}: FlowCanvasProps) {
   const initialData = useRef(loadDiagram());
-  const [nodes, setNodes, onNodesChange] = useNodesState<Node>(initialData.current?.nodes || []);
-  const [edges, setEdges, onEdgesChange] = useEdgesState<Edge>(initialData.current?.edges || []);
+  const [nodes, setNodes, onNodesChange] = useNodesState<Node>(
+    initialData.current?.nodes || []
+  );
+  const [edges, setEdges, onEdgesChange] = useEdgesState<Edge>(
+    initialData.current?.edges || []
+  );
   const [selectedEdgeIds, setSelectedEdgeIds] = useState<string[]>([]);
   const { screenToFlowPosition } = useReactFlow();
 
@@ -48,9 +59,12 @@ export function FlowCanvas({ selectedEdgeType, selectedArrowType, darkMode }: Fl
     saveDiagram(nodes, edges);
   }, [nodes, edges]);
 
-  const onSelectionChange: OnSelectionChangeFunc = useCallback(({ edges: selectedEdges }) => {
-    setSelectedEdgeIds(selectedEdges.map(e => e.id));
-  }, []);
+  const onSelectionChange: OnSelectionChangeFunc = useCallback(
+    ({ edges: selectedEdges }) => {
+      setSelectedEdgeIds(selectedEdges.map((e) => e.id));
+    },
+    []
+  );
 
   useEffect(() => {
     if (selectedEdgeIds.length > 0) {
@@ -61,27 +75,37 @@ export function FlowCanvas({ selectedEdgeType, selectedArrowType, darkMode }: Fl
             return {
               ...edge,
               type: selectedEdgeType,
-              animated: selectedEdgeType === 'animated',
-              style: selectedEdgeType === 'dashed' ? { strokeDasharray: '5,5' } : {},
+              animated: selectedEdgeType === "animated",
+              style:
+                selectedEdgeType === "dashed" ? { strokeDasharray: "5,5" } : {},
               markerStart: markers.markerStart,
-              markerEnd: markers.markerEnd,
+              markerEnd: markers.markerEnd
             };
           }
           return edge;
         })
       );
     }
-  }, [selectedEdgeType, selectedArrowType, selectedEdgeIds, setEdges, darkMode]);
+  }, [
+    selectedEdgeType,
+    selectedArrowType,
+    selectedEdgeIds,
+    setEdges,
+    darkMode
+  ]);
 
   const onConnect: OnConnect = useCallback(
     (params: Connection) => {
       const newEdge = {
         ...params,
         type: selectedEdgeType,
-        animated: selectedEdgeType === 'animated',
-        style: selectedEdgeType === 'dashed' ? { strokeDasharray: '5,5' } : undefined,
-        data: { label: '' },
-        ...getMarkers(selectedArrowType, darkMode),
+        animated: selectedEdgeType === "animated",
+        style:
+          selectedEdgeType === "dashed"
+            ? { strokeDasharray: "5,5" }
+            : undefined,
+        data: { label: "" },
+        ...getMarkers(selectedArrowType, darkMode)
       };
       setEdges((eds) => addEdge(newEdge, eds));
     },
@@ -90,19 +114,19 @@ export function FlowCanvas({ selectedEdgeType, selectedArrowType, darkMode }: Fl
 
   const onDragOver = useCallback((event: React.DragEvent) => {
     event.preventDefault();
-    event.dataTransfer.dropEffect = 'move';
+    event.dataTransfer.dropEffect = "move";
   }, []);
 
   const onDrop = useCallback(
     (event: React.DragEvent) => {
       event.preventDefault();
 
-      const type = event.dataTransfer.getData('application/reactflow');
+      const type = event.dataTransfer.getData("application/reactflow");
       if (!type) return;
 
       const position = screenToFlowPosition({
         x: event.clientX,
-        y: event.clientY,
+        y: event.clientY
       });
 
       const newNode: Node = {
@@ -110,10 +134,10 @@ export function FlowCanvas({ selectedEdgeType, selectedArrowType, darkMode }: Fl
         type,
         position: {
           x: position.x - 50,
-          y: position.y - 50,
+          y: position.y - 50
         },
         data: { label: type.charAt(0).toUpperCase() + type.slice(1) },
-        style: { width: 70, height: 70 },
+        style: { width: 70, height: 70 }
       };
 
       setNodes((nds) => [...nds, newNode]);

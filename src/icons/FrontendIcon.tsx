@@ -1,6 +1,12 @@
 export function FrontendIcon() {
   return (
-    <svg width="48" height="44" viewBox="0 0 48 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width="48"
+      height="44"
+      viewBox="0 0 48 44"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <rect x="2" y="2" width="44" height="32" rx="3" fill="#14b8a6" />
       <rect x="2" y="2" width="44" height="8" fill="#0d9488" />
       <circle cx="8" cy="6" r="2" fill="#ef4444" />

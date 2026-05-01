@@ -1,6 +1,6 @@
-import { Node, Edge } from '@xyflow/react';
+import { Node, Edge } from "@xyflow/react";
 
-const STORAGE_KEY = 'loom-diagram';
+const STORAGE_KEY = "loom-diagram";
 
 interface StoredData {
   nodes: Node[];
