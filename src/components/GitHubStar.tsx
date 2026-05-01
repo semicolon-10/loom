@@ -38,7 +38,7 @@ export default function GitHubStar() {
         color: "rgba(255,255,255,0.5)",
         fontSize: 11,
         zIndex: 10,
-        transition: "all 0.2s ease",
+        transition: "all 0.2s ease"
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.background = "rgba(20,20,20,0.8)";
@@ -62,12 +62,10 @@ export default function GitHubStar() {
             style={{
               width: 1,
               height: 12,
-              background: "rgba(255,255,255,0.12)",
+              background: "rgba(255,255,255,0.12)"
             }}
           />
-          <span style={{ color: "#facc15", fontWeight: 600 }}>
-            ⭐ {stars}
-          </span>
+          <span style={{ color: "#facc15", fontWeight: 600 }}>⭐ {stars}</span>
         </>
       )}
     </a>

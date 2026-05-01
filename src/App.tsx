@@ -50,7 +50,7 @@ export default function App() {
           selectedArrowType={selectedArrowType}
           darkMode={darkMode}
         />
-        <GitHubStar/>
+        <GitHubStar />
       </div>
     </ReactFlowProvider>
   );
