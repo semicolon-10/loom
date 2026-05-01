@@ -37,6 +37,7 @@ import { EmailIcon } from "./icons/EmailIcon.tsx";
 import { SMSIcon } from "./icons/SMSIcon.tsx";
 import { CloudIcon } from "./icons/CloudIcon.tsx";
 import { OpenTelemetryIcon } from "./icons/OpenTelemetryIcon.tsx";
+import { AIAgentIcon } from "./icons/AIAgentIcon.tsx";
 
 export type NodeGroup =
   | "People & Actors"
@@ -67,6 +68,12 @@ export const NODE_CONFIGS: NodeConfigWithIcon[] = [
     type: "supplier",
     label: "Supplier",
     icon: <SupplierIcon />,
+    group: "People & Actors"
+  },
+  {
+    type: "aiagent",
+    label: "AI Agent",
+    icon: <AIAgentIcon />,
     group: "People & Actors"
   },
 

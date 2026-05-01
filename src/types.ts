@@ -35,7 +35,8 @@ export type NodeType =
   | "email"
   | "sms"
   | "cloud"
-  | "openTelemetry";
+  | "openTelemetry"
+  | "aiagent";
 
 export type EdgeType =
   | "default"
