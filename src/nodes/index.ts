@@ -36,6 +36,7 @@ import { EmailNode } from "./EmailNode.tsx";
 import { SMSNode } from "./SMSNode.tsx";
 import { CloudNode } from "./CloudNode.tsx";
 import { OpenTelemetryNode } from "./OpenTelemetryNode.tsx";
+import { AIAgentNode } from "./AIAgentNode.tsx";
 
 export const nodeTypes: NodeTypes = {
   user: UserNode,
@@ -75,4 +76,5 @@ export const nodeTypes: NodeTypes = {
   sms: SMSNode,
   cloud: CloudNode,
   openTelemetry: OpenTelemetryNode,
+  aiagent: AIAgentNode
 };

@@ -19,6 +19,7 @@ import { nodeTypes } from "../nodes";
 import { edgeTypes } from "../edges";
 import { EdgeType, ArrowType } from "../types";
 import { saveDiagram, loadDiagram } from "../utils/storage";
+import { NODE_CONFIGS, NOTES_CONFIG } from "../nodeConfigs";
 
 interface FlowCanvasProps {
   selectedEdgeType: EdgeType;
@@ -136,7 +137,11 @@ export function FlowCanvas({
           x: position.x - 50,
           y: position.y - 50
         },
-        data: { label: type.charAt(0).toUpperCase() + type.slice(1) },
+        data: {
+          label:
+            [...NODE_CONFIGS, NOTES_CONFIG].find((c) => c.type === type)
+              ?.label ?? type.charAt(0).toUpperCase() + type.slice(1)
+        },
         style: { width: 70, height: 70 }
       };
 
