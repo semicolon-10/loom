@@ -31,7 +31,11 @@ export type NodeType =
   | "telegram"
   | "telephone"
   | "ci"
-  | "vectordb";
+  | "vectordb"
+  | "email"
+  | "sms"
+  | "cloud"
+  | "openTelemetry";
 
 export type EdgeType =
   | "default"
