@@ -3,6 +3,7 @@ import { ReactFlowProvider } from "@xyflow/react";
 import { Toolbox } from "./components/Toolbox";
 import { FlowCanvas } from "./components/FlowCanvas";
 import { EdgeType, ArrowType } from "./types";
+import GitHubStar from "./components/GitHubStar";
 
 const getSystemDarkMode = () =>
   window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -49,6 +50,7 @@ export default function App() {
           selectedArrowType={selectedArrowType}
           darkMode={darkMode}
         />
+        <GitHubStar/>
       </div>
     </ReactFlowProvider>
   );
