@@ -33,6 +33,10 @@ import { TelegramIcon } from "./icons/TelegramIcon";
 import { TelephoneIcon } from "./icons/TelephoneIcon";
 import { CICDIcon } from "./icons/CICDIcon";
 import { VectorDBIcon } from "./icons/VectorDBIcon";
+import { EmailIcon } from "./icons/EmailIcon.tsx";
+import { SMSIcon } from "./icons/SMSIcon.tsx";
+import { CloudIcon } from "./icons/CloudIcon.tsx";
+import { OpenTelemetryIcon } from "./icons/OpenTelemetryIcon.tsx";
 
 export type NodeGroup =
   | "People & Actors"
@@ -79,9 +83,9 @@ export const NODE_CONFIGS: NodeConfigWithIcon[] = [
     icon: <MobileIcon />,
     group: "Frontend & Clients"
   },
-  { type: "cdn", label: "CDN", icon: <CDNIcon />, group: "Frontend & Clients" },
 
   // Backend & Services
+  { type: "cdn", label: "CDN", icon: <CDNIcon />, group: "Backend & Services" },
   {
     type: "service",
     label: "Service",
@@ -105,6 +109,12 @@ export const NODE_CONFIGS: NodeConfigWithIcon[] = [
     type: "ci",
     label: "CI/CD",
     icon: <CICDIcon />,
+    group: "Backend & Services"
+  },
+  {
+    type: "cloud",
+    label: "Cloud",
+    icon: <CloudIcon />,
     group: "Backend & Services"
   },
 
@@ -174,6 +184,12 @@ export const NODE_CONFIGS: NodeConfigWithIcon[] = [
     icon: <MonitoringIcon />,
     group: "Observability"
   },
+  {
+    type: "openTelemetry",
+    label: "OpenTelemetry",
+    icon: <OpenTelemetryIcon />,
+    group: "Observability"
+  },
 
   // Integrations
   {
@@ -219,6 +235,18 @@ export const NODE_CONFIGS: NodeConfigWithIcon[] = [
     type: "telephone",
     label: "Telephone",
     icon: <TelephoneIcon />,
+    group: "Integrations"
+  },
+  {
+    type: "email",
+    label: "Email",
+    icon: <EmailIcon />,
+    group: "Integrations"
+  },
+  {
+    type: "sms",
+    label: "SMS",
+    icon: <SMSIcon />,
     group: "Integrations"
   }
 ];

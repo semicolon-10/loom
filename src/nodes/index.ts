@@ -32,6 +32,10 @@ import { TelegramNode } from "./TelegramNode.tsx";
 import { TelephoneNode } from "./TelephoneNode.tsx";
 import { VectorDBNode } from "./VectorDBNode.tsx";
 import { CINode } from "./CINode.tsx";
+import { EmailNode } from "./EmailNode.tsx";
+import { SMSNode } from "./SMSNode.tsx";
+import { CloudNode } from "./CloudNode.tsx";
+import { OpenTelemetryNode } from "./OpenTelemetryNode.tsx";
 
 export const nodeTypes: NodeTypes = {
   user: UserNode,
@@ -66,5 +70,9 @@ export const nodeTypes: NodeTypes = {
   telegram: TelegramNode,
   telephone: TelephoneNode,
   vectordb: VectorDBNode,
-  ci: CINode
+  ci: CINode,
+  email: EmailNode,
+  sms: SMSNode,
+  cloud: CloudNode,
+  openTelemetry: OpenTelemetryNode,
 };
