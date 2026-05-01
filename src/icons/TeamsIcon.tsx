@@ -1,5 +1,3 @@
-import React from "react";
-
 export function TeamsIcon() {
   return (
     <svg
@@ -9,42 +7,19 @@ export function TeamsIcon() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <circle cx="30" cy="14" r="8" fill="#a78bfa" />
-      <circle cx="34" cy="30" r="6" fill="rgba(139,92,246,0.35)" />
+      <rect x="2" y="4" width="40" height="40" rx="10" fill="#6264A7" />
 
-      <rect
-        x="16"
-        y="10"
-        width="20"
-        height="24"
-        rx="6"
-        fill="#8b5cf6"
-      />
+      <circle cx="31" cy="16" r="6" fill="#9EA3D4" />
+      <path d="M23 34 Q23 26 31 26 Q39 26 39 34" fill="#9EA3D4" />
 
-      <rect
-        x="6"
-        y="14"
-        width="22"
-        height="24"
-        rx="6"
-        fill="#7c3aed"
-      />
-
-      <rect
-        x="6"
-        y="14"
-        width="22"
-        height="24"
-        rx="6"
-        fill="rgba(255,255,255,0.15)"
-      />
+      <rect x="6" y="18" width="22" height="18" rx="4" fill="white" />
 
       <text
         x="17"
-        y="30"
+        y="33"
         textAnchor="middle"
-        fill="white"
-        fontSize="14"
+        fill="#6264A7"
+        fontSize="16"
         fontWeight="bold"
         fontFamily="sans-serif"
       >

@@ -25,6 +25,11 @@ import { NoSQLNode } from './NoSQLNode';
 import { NotesNode } from './NotesNode';
 import { SlackNode } from './SlackNode';
 import { TeamsNode } from './TeamsNode';
+import { WhatsAppNode } from "./WhatsAppNode.tsx";
+import { LineNode } from "./LineNode.tsx";
+import { KakaoTalkNode } from "./KakaoTalkNode.tsx";
+import { TelegramNode } from "./TelegramNode.tsx";
+import { TelephoneNode } from "./TelephoneNode.tsx";
 
 export const nodeTypes: NodeTypes = {
   user: UserNode,
@@ -53,4 +58,9 @@ export const nodeTypes: NodeTypes = {
   notes: NotesNode,
   slack: SlackNode,
   teams: TeamsNode,
+  whatsapp: WhatsAppNode,
+  line: LineNode,
+  kakaoTalk: KakaoTalkNode,
+  telegram: TelegramNode,
+  telephone: TelephoneNode,
 };

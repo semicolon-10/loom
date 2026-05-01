@@ -1,28 +1,23 @@
-import React from "react";
-
 export function SlackIcon() {
   return (
     <svg
       width="44"
       height="48"
-      viewBox="0 0 64 64"
+      viewBox="0 0 44 48"
+      fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      {/* Blue */}
-      <rect x="8" y="24" width="20" height="12" rx="6" fill="#36C5F0"/>
-      <rect x="20" y="8" width="12" height="20" rx="6" fill="#36C5F0"/>
+      <rect x="14" y="4"  width="8" height="16" rx="4" fill="#36C5F0" />
+      <rect x="4"  y="16" width="16" height="8" rx="4" fill="#36C5F0" />
 
-      {/* Green */}
-      <rect x="32" y="8" width="12" height="20" rx="6" fill="#2EB67D"/>
-      <rect x="36" y="24" width="20" height="12" rx="6" fill="#2EB67D"/>
+      <rect x="24" y="4"  width="8" height="16" rx="4" fill="#2EB67D" />
+      <rect x="26" y="16" width="16" height="8" rx="4" fill="#2EB67D" />
 
-      {/* Yellow */}
-      <rect x="36" y="32" width="20" height="12" rx="6" fill="#ECB22E"/>
-      <rect x="32" y="36" width="12" height="20" rx="6" fill="#ECB22E"/>
+      <rect x="24" y="28" width="8" height="16" rx="4" fill="#ECB22E" />
+      <rect x="26" y="26" width="16" height="8" rx="4" fill="#ECB22E" />
 
-      {/* Red */}
-      <rect x="20" y="36" width="12" height="20" rx="6" fill="#E01E5A"/>
-      <rect x="8" y="32" width="20" height="12" rx="6" fill="#E01E5A"/>
+      <rect x="14" y="28" width="8" height="16" rx="4" fill="#E01E5A" />
+      <rect x="4"  y="26" width="16" height="8" rx="4" fill="#E01E5A" />
     </svg>
   );
 }
