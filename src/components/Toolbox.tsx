@@ -26,8 +26,8 @@ const initialSections: Record<SectionKey, boolean> = {
   'Observability': true,
   'Integrations': true,
   notes: true,
-  lines: false,
-  arrows: false,
+  lines: true,
+  arrows: true,
 };
 
 export function Toolbox({ onDragStart, selectedEdgeType, onEdgeTypeChange, selectedArrowType, onArrowTypeChange, darkMode, onDarkModeToggle }: ToolboxProps) {
